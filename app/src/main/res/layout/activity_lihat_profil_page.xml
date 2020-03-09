@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FDFDFD"
+    android:id="@+id/lihatProfilPage"
+    android:layout_height="match_parent"
+    tools:context=".LihatProfilPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:id="@+id/topBar"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="Profil"
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_below="@id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardElevation="0dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="15dp"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:layout_width="match_parent"
+                        app:riv_corner_radius_top_left="20dp"
+                        app:riv_corner_radius_top_right="20dp"
+                        android:id="@+id/img"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bgtas"
+                        android:layout_height="220dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/layfotoPP"
+                        android:layout_marginTop="140dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="150dp"
+                            android:layout_centerInParent="true"
+                            app:civ_border_width="4dp"
+                            android:id="@+id/fotoProfile"
+                            android:src="@drawable/ic_student"
+                            app:civ_border_color="#ffff"
+                            android:layout_height="150dp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="50dp"
+                            android:id="@+id/btnGantiPP"
+                            app:civ_border_color="#fff"
+                            app:civ_border_width="4dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:src="@drawable/ic_change_pp"
+                            android:layout_height="50dp" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/form"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/layfotoPP"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ivNama"
+                                android:src="@drawable/ic_boy"
+                                android:layout_height="25dp" />
+
+                            <RelativeLayout
+                                android:layout_toRightOf="@id/ivNama"
+                                android:layout_width="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+
+                                <RelativeLayout
+                                    android:layout_toLeftOf="@id/editNama"
+                                    android:layout_marginRight="10dp"
+                                    android:id="@+id/rvNama"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="Nama"
+                                        android:id="@+id/jdlNama"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="Nama Siswa"
+                                        android:layout_below="@+id/jdlNama"
+                                        android:id="@+id/namaSiswa"
+                                        android:textSize="20sp"
+                                        android:textColor="#464646"
+                                        android:layout_height="wrap_content" />
+
+                                </RelativeLayout>
+
+                                <ImageView
+                                    android:layout_centerVertical="true"
+                                    android:id="@+id/editNama"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="25dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp"
+                                    android:layout_height="25dp" />
+
+
+                                <View
+                                    android:layout_below="@+id/rvNama"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="match_parent"
+                                    android:background="#CECECE"
+                                    android:layout_height="1dp"></View>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ivNis"
+                                android:src="@drawable/ic_id_card"
+                                android:layout_height="25dp" />
+
+                            <RelativeLayout
+                                android:layout_toRightOf="@id/ivNis"
+                                android:layout_width="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+
+                                <RelativeLayout
+                                    android:layout_toLeftOf="@id/editNis"
+                                    android:layout_marginRight="10dp"
+                                    android:id="@+id/rvNis"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="NIS"
+                                        android:id="@+id/txtJudulNis"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="NIS Siswa"
+                                        android:layout_below="@+id/txtJudulNis"
+                                        android:id="@+id/nisSiswa"
+                                        android:textSize="20sp"
+                                        android:textColor="#464646"
+                                        android:layout_height="wrap_content" />
+
+                                </RelativeLayout>
+
+                                <ImageView
+                                    android:layout_centerVertical="true"
+                                    android:id="@+id/editNis"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="25dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp"
+                                    android:layout_height="25dp" />
+
+
+                                <View
+                                    android:layout_below="@+id/rvNis"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="match_parent"
+                                    android:background="#CECECE"
+                                    android:layout_height="1dp"></View>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/formKelas"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/ivKelas"
+                                android:src="@drawable/ic_presentation"
+                                android:layout_height="25dp" />
+
+                            <RelativeLayout
+                                android:layout_toRightOf="@id/ivKelas"
+                                android:layout_width="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+
+                                <RelativeLayout
+                                    android:layout_toLeftOf="@id/editKelas"
+                                    android:layout_marginRight="10dp"
+                                    android:id="@+id/rvKelas"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="Kelas"
+                                        android:id="@+id/jdlKelas"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="Nama Siswa"
+                                        android:layout_below="@+id/jdlKelas"
+                                        android:id="@+id/kelasSiswa"
+                                        android:textSize="20sp"
+                                        android:textColor="#464646"
+                                        android:layout_height="wrap_content" />
+
+                                </RelativeLayout>
+
+                                <ImageView
+                                    android:layout_centerVertical="true"
+                                    android:id="@+id/editKelas"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="25dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp"
+                                    android:layout_height="25dp" />
+
+
+                                <View
+                                    android:layout_below="@+id/rvKelas"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="match_parent"
+                                    android:background="#CECECE"
+                                    android:layout_height="1dp"></View>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:background="@drawable/bgbutton"
+                        android:text="Simpan"
+                        android:layout_marginBottom="50dp"
+                        android:layout_below="@+id/form"
+                        android:id="@+id/btnSimpan"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/convergence"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/bgGelap"
+        android:layout_width="match_parent"
+        android:background="#90000000"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/isiEditValue"
+            android:background="@drawable/bgprofile"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_margin="50dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:text="Ubah"
+                android:id="@+id/judulUbah"
+                android:fontFamily="@font/convergence"
+                android:textSize="20sp"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:hint="nama..."
+                android:gravity="top"
+                android:layout_marginTop="10dp"
+                android:id="@+id/textUbahValue"
+                android:inputType="text"
+                android:padding="15dp"
+                android:background="@drawable/shapeoval"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:entries="@array/kelas"
+                android:id="@+id/spKelasProfil"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:rowCount="1"
+                android:columnCount="2"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:text="Tutup"
+                    android:id="@+id/btnTutupPopup"
+                    android:layout_rowWeight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_columnWeight="1"
+                    android:textColor="#ffff"
+                    android:background="@drawable/bgbuttonmerah"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:text="Ubah"
+                    android:id="@+id/btnSelesai"
+                    android:textColor="#ffff"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bgbuttonijo"
+                    android:layout_height="wrap_content" />
+
+
+            </GridLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:background="#90000000"
+        android:id="@+id/bgLoadReg"
+        android:layout_height="match_parent">
+
+        <com.agrawalsuneet.dotsloader.loaders.LazyLoader
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progresBarReg"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            app:lazyloader_animDur="150"
+            app:lazyloader_dotsDist="10dp"
+            app:lazyloader_dotsRadius="16dp"
+            app:lazyloader_firstDelayDur="100"
+            app:lazyloader_firstDotColor="#E53935"
+            app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+            app:lazyloader_secondDelayDur="200"
+            app:lazyloader_secondDotColor="#FDE235"
+            app:lazyloader_thirdDotColor="#4CFF00" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

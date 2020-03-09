@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/DetailJadwalPage"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".DetailJadwalPage">
+
+    <LinearLayout
+        android:id="@+id/RL"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="Jadwal X RPL-1"
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:divider="#fff"
+        android:layout_width="match_parent"
+        android:id="@+id/myJadwal"
+        android:layout_below="@+id/RL"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:elevation="1dp"
+        android:visibility="visible"
+        android:id="@+id/bgGelap"
+        android:layout_width="match_parent"
+        android:background="#90000000"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/isiPopup"
+            android:background="@drawable/bgprofile"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_margin="50dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/convergence"
+                android:text="Tambah Mapel"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:hint="hari..."
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtHariPopup"
+                android:inputType="textPersonName"
+                android:enabled="false"
+                android:padding="10dp"
+                android:background="@drawable/bgedittext_radius10"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:hint="mapel..."
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtMapelPopup"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:background="@drawable/bgedittext_radius10"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:hint="06:30"
+                    android:id="@+id/startTime"
+                    android:drawableStart="@drawable/ic_date_range_black_24dp"
+                    android:drawablePadding="5dp"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:layout_weight="1"
+                    android:inputType="textPersonName"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/bgedittext_radius10"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=" - "
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/convergence"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:hint="08:00"
+                    android:drawableStart="@drawable/ic_date_range_black_24dp"
+                    android:drawablePadding="5dp"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:id="@+id/endTime"
+                    android:layout_weight="1"
+                    android:inputType="textPersonName"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/bgedittext_radius10"
+                    android:layout_height="wrap_content" />
+
+                <!--<com.github.clans.fab.FloatingActionButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--app:fab_size="mini"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--app:fab_colorNormal="#fff"-->
+                <!--android:src="@drawable/ic_date_range_black_24dp"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:rowCount="1"
+                android:columnCount="2"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:text="Tutup"
+                    android:id="@+id/btnTutupPopup"
+                    android:layout_rowWeight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_columnWeight="1"
+                    android:textColor="#ffff"
+                    android:background="@drawable/bgbuttonmerah"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:text="Tambah"
+                    android:id="@+id/btnTambahPopup"
+                    android:textColor="#ffff"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bgbuttonijo"
+                    android:layout_height="wrap_content" />
+
+
+            </GridLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

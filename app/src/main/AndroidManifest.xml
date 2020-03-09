@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app24announce.dupat.id">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".DupatSmartSc"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DetailJadwalPage"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".JadwalPage"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".DetailTugasPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TambahTugasPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TugasGuruPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LihatProfilPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".InfoKehadiran"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ListSudahInputKehadiranPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AboutDevPage"
+            android:parentActivityName=".MainActivity" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false" />
+
+        <activity android:name=".InsertFoto" />
+        <activity
+            android:name=".DaftarTidakMasukKetuaKelas"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DaftarTelatPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".registerPage"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".loginPage"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".homePage" />
+        <activity
+            android:name=".pengumumanPage"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <receiver android:name=".BootService">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".ServiceBackground"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".JobServiceNotif"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

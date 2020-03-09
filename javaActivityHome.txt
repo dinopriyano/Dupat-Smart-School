@@ -1,0 +1,452 @@
+package com.app24announce.dupat.id;
+
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.os.Build;
+import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.animation.LinearInterpolator;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
+
+import com.agrawalsuneet.dotsloader.loaders.LazyLoader;
+import com.firebase.jobdispatcher.FirebaseJobDispatcher;
+import com.firebase.jobdispatcher.GooglePlayDriver;
+import com.firebase.jobdispatcher.Job;
+import com.firebase.jobdispatcher.JobService;
+import com.firebase.jobdispatcher.Lifetime;
+import com.firebase.jobdispatcher.RetryStrategy;
+import com.firebase.jobdispatcher.Trigger;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class homePage extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+
+    private SharedPreferenceConfig preferenceConfig;
+
+    private SharedPreferenceConfig preferenceConfig2;
+
+    FirebaseDatabase database;
+    TextToSpeech t1;
+    FirebaseUser firebaseUser;
+    RelativeLayout bgLogLoadHome,layoutHarian;
+    LazyLoader progBarHome;
+    CircleImageView fotoProfil;
+    String textSound;
+    DatabaseReference myRefHome,refTotUser,refTotTelat,refUserPP,refKelas;
+    String kel;
+    ArrayList<String> pengumuman = new ArrayList<>();
+    ArrayList<String> keys = new ArrayList<>();
+    ListView lv;
+    CardView cvTulis,cvDaftarTelat,cvdaftarTidakMasuk,cvAboutDev,cvDaftarCekKehadiran;
+    FirebaseAuth myAuth;
+    TextView txtNama,txtKelas,txtNis,jumMur,jumTel,samadenagnKelas,judulKelas;
+    boolean rev;
+    ImageButton dropDownMenu;
+    String linkPP;
+
+    String posisi,guruPiket;
+
+
+    //firebase job dispatcher
+    FirebaseJobDispatcher jobDispatcher;
+
+    private StorageReference UserProfileImageRef;
+
+    BootService bootService = new BootService();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home_page);
+
+
+
+        dropDownMenu = (ImageButton) findViewById(R.id.menuBtn);
+        bgLogLoadHome = (RelativeLayout) findViewById(R.id.bgLoadLogHome);
+        progBarHome = (LazyLoader) findViewById(R.id.progresBarHome);
+        bgLogLoadHome.setBackgroundResource(R.drawable.bgitem);
+
+        String month[] = {"Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"};
+        String hari[] = {"Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"};
+        GregorianCalendar gc = new GregorianCalendar();
+        final String bln = month[gc.get(Calendar.MONTH)];
+        final String hri = hari[(gc.get(Calendar.DAY_OF_WEEK))-1];
+        final int tgl = gc.get(Calendar.DATE);
+        final int year = gc.get(Calendar.YEAR);
+        final int jam = gc.get(Calendar.HOUR);
+        final int mnt = gc.get(Calendar.MINUTE);
+        final int dt = gc.get(Calendar.SECOND);
+        final int bul = gc.get(Calendar.MONTH);
+        final int pmam = gc.get(Calendar.AM_PM);
+        final String hariIni = hri+", "+tgl+" "+bln+" "+year;
+
+        LazyLoader loader = new LazyLoader(this, 30, 20, ContextCompat.getColor(this, R.color.loader_selected),
+                ContextCompat.getColor(this, R.color.loader_selected),
+                ContextCompat.getColor(this, R.color.loader_selected));
+        loader.setAnimDuration(150);
+        loader.setFirstDelayDuration(100);
+        loader.setSecondDelayDuration(200);
+        loader.setInterpolator(new LinearInterpolator());
+
+        progBarHome.addView(loader);
+        bgLogLoadHome.setVisibility(View.VISIBLE);
+
+        myAuth = FirebaseAuth.getInstance();
+        firebaseUser = myAuth.getCurrentUser();
+        database = FirebaseDatabase.getInstance();
+        myRefHome = database.getReference("user").child(myAuth.getUid());
+        myRefHome.keepSynced(true);
+        refTotUser = database.getReference("user");
+        refTotUser.keepSynced(true);
+        refTotTelat = database.getReference("terlambat").child(hariIni);
+        refTotTelat.keepSynced(true);
+        preferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+        txtNama = (TextView) findViewById(R.id.profNama);
+        txtKelas = (TextView) findViewById(R.id.profKelas);
+        txtNis = (TextView) findViewById(R.id.profNis);
+        samadenagnKelas = (TextView) findViewById(R.id.sd2);
+        judulKelas = (TextView) findViewById(R.id.textKelas);
+        jumMur = (TextView) findViewById(R.id.txtJumMur);
+        jumTel = (TextView) findViewById(R.id.txtJumTel);
+        final int[] countUserMurid = {0};
+        final int[] countUserTelat = {0};
+        cvDaftarTelat = (CardView) findViewById(R.id.cvDaftarTelat);
+        cvdaftarTidakMasuk = (CardView) findViewById(R.id.cvDaftarTidakMasuk);
+        cvAboutDev = (CardView) findViewById(R.id.cvAboutDev);
+        cvDaftarCekKehadiran = (CardView) findViewById(R.id.cvDaftarCekKehadiran);
+        layoutHarian = (RelativeLayout) findViewById(R.id.layHarian);
+
+
+
+        fotoProfil = (CircleImageView) findViewById(R.id.fotoProfile);
+        UserProfileImageRef = FirebaseStorage.getInstance().getReference().child("Image Profile").child(myAuth.getUid()+".jpg");
+
+
+
+        if(firebaseUser != null)
+        {
+//            Toast.makeText(this, "user ada", Toast.LENGTH_SHORT).show();
+            //startService(new Intent(homePage.this,MyService.class));
+        }
+
+        myRefHome.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String nama = dataSnapshot.child("nama").getValue().toString();
+                String kelas = dataSnapshot.child("kelas").getValue().toString();
+                String nis = dataSnapshot.child("nis").getValue().toString();
+                String pos = dataSnapshot.child("posisi").getValue().toString();
+
+                String ketu = dataSnapshot.child("ketuakelas").getValue().toString();
+                String gurupiket = dataSnapshot.child("gurupiket").getValue().toString();
+
+                posisi = pos;
+                guruPiket = gurupiket;
+
+                if(pos.equals("guru"))
+                {
+                    txtKelas.setVisibility(View.GONE);
+                    samadenagnKelas.setVisibility(View.GONE);
+                    judulKelas.setVisibility(View.GONE);
+                    if(gurupiket.equals("1"))
+                    {
+                        cvdaftarTidakMasuk.setVisibility(View.GONE);
+                        cvDaftarCekKehadiran.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        cvdaftarTidakMasuk.setVisibility(View.GONE);
+
+
+
+                        cvDaftarCekKehadiran.setVisibility(View.GONE);
+                    }
+                }
+                String pp = dataSnapshot.child("fotoprofil").getValue().toString();
+                txtNama.setText(nama);
+                txtKelas.setText(kelas);
+                txtNis.setText(nis);
+                if(pos.equals("murid"))
+                {
+                    layoutHarian.setVisibility(View.GONE);
+                    cvDaftarTelat.setVisibility(View.GONE);
+                    cvDaftarCekKehadiran.setVisibility(View.GONE);
+
+                    if(ketu.equals("0"))
+                    {
+                        cvdaftarTidakMasuk.setVisibility(View.GONE);
+                    }
+
+                    else {
+                        cvdaftarTidakMasuk.setVisibility(View.VISIBLE);
+                    }
+                }
+                if(pp.equals("0"))
+                {
+                    startActivity(new Intent(homePage.this,InsertFoto.class));
+                }
+                else
+                {
+                    //buat retrieve foto ke image view online only
+//                    try {
+//                        final File file = File.createTempFile("image","jpg");
+//                        UserProfileImageRef.getFile(file).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                            @Override
+//                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                                Bitmap bitmap = BitmapFactory.decod
+//                                eFile(file.getAbsolutePath());
+//                    fotoProfil.setImageBitmap(bitmap);
+//                                Picasso.get().load(String.valueOf(bitmap)).into(fotoProfil);
+//                            }
+//                        }).addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Toast.makeText(homePage.this, "gagal memuat foto profil", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+
+                    //retrieve foto pake picasso bisa di buka waktu offline
+                    Picasso.get().load(pp).placeholder(R.drawable.student).error(R.drawable.student).into(fotoProfil);
+                }
+                bgLogLoadHome.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                bgLogLoadHome.setVisibility(View.INVISIBLE);
+            }
+        });
+
+
+
+
+        refTotUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    countUserMurid[0] = (int) dataSnapshot.getChildrenCount();
+                    jumMur.setText(Integer.toString(countUserMurid[0]));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        refTotTelat.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    countUserTelat[0] = (int) dataSnapshot.getChildrenCount();
+                    jumTel.setText(Integer.toString(countUserTelat[0]));
+                }
+                else
+                {
+                    jumTel.setText("0");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        ImageView menu = findViewById(R.id.menuBtn);
+
+        registerForContextMenu(menu);
+
+
+
+        preferenceConfig2 = new SharedPreferenceConfig(getApplicationContext());
+
+        CardView pengumuman = (CardView) findViewById(R.id.riwayatPage);
+        pengumuman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homePage.this, pengumumanPage.class));
+            }
+        });
+
+        cvDaftarTelat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homePage.this, DaftarTelatPage.class);
+                intent.putExtra("posisi",posisi);
+                intent.putExtra("gurupiket",guruPiket);
+                startActivity(intent);
+
+
+            }
+        });
+
+        cvdaftarTidakMasuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(homePage.this,DaftarTidakMasukKetuaKelas.class);
+
+                refKelas = FirebaseDatabase.getInstance().getReference().child("user").child(myAuth.getUid());
+                refKelas.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        kel = dataSnapshot.child("kelas").getValue().toString();
+                        intent.putExtra("kelas", kel);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+            }
+        });
+
+        cvAboutDev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homePage.this,AboutDevPage.class));
+            }
+        });
+
+        cvDaftarCekKehadiran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homePage.this,ListSudahInputKehadiranPage.class));
+            }
+        });
+
+
+
+        dropDownMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu(homePage.this, view);
+                popup.setOnMenuItemClickListener(homePage.this);
+                popup.inflate(R.menu.layout_menu);
+                popup.show();
+            }
+        });
+
+
+    }
+
+
+
+    @Override
+    public boolean onMenuItemClick(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.menu_logout:
+                preferenceConfig2.writeLoginStatus(false);
+                stopService(new Intent(this, MyService.class));
+                myAuth.signOut();
+                startActivity(new Intent(this, loginPage.class));
+                finish();
+
+
+                return true;
+            default:
+                return false;
+        }
+
+
+    }
+
+
+
+
+
+    private boolean exit = false;
+    Handler handler = new Handler();
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void onBackPressed() {
+
+        if (exit){
+            finishAffinity();
+            // finish activity
+        }else{
+            Toast.makeText(this, "Tekan Sekali Lagi Untuk Keluar",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            //handler.postDelayed( {exit = false}, 3 * 1000);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            },3000);
+            }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        startService(new Intent(homePage.this,MyService.class));
+    }
+
+
+
+    public void jobDispatcher()
+    {
+
+
+    }
+
+}

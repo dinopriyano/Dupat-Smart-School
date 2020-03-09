@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".DetailTugasPage">
+
+    <LinearLayout
+        android:id="@+id/RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="Detail Tugas"
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@+id/RL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="22sp"
+                    android:textColor="#464646"
+                    android:id="@+id/mapelDetil"
+                    android:text="Matematika"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:layout_below="@+id/mapelDetil"
+                    android:id="@+id/namaGuruTanggalTulis"
+                    android:text="oleh Azizah. Rabu, 18 September 2019"
+                    android:layout_height="wrap_content" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/kelasDetil"-->
+                <!--android:textSize="14sp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:text="untuk XI RPL-1"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <TextView
+                    android:textColor="#464646"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/namaGuruTanggalTulis"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/descDetil"
+                    android:layout_width="wrap_content"
+                    android:text="ini deskripsi tugas ini deskripsi tugas ini deskripsi tugas ini deskripsi tugas ini deskripsi tugas ini deskripsi tugas"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_below="@id/descDetil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="20dp"
+                        android:overScrollMode="never"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/rvLampiranDetail"
+                        tools:listitem="@layout/row_recyclerview_attachment_detail_tugas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

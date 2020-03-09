@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Dupat Smart School</string>
+    <string name="login_preference">dupat.id_login_preferences</string>
+    <string name="login_status_preference">dupat.id_login_status_preferences</string>
+    <string name="login_preference2">dupat.id_login_preferences_2</string>
+    <string name="login_status_preference2">dupat.id_login_status_preferences_2</string>
+    <string name="logo_and_icon_n_designer"><![CDATA[Logo & Icon  Designer]]></string>
+    <string-array name="kelas">
+        <item>Pilih Kelas</item>
+        <item>X RPL-1</item>
+        <item>X RPL-2</item>
+        <item>X UPW</item>
+        <item>X TBG-1</item>
+        <item>X TBG-2</item>
+        <item>X TBG-3</item>
+        <item>X TBS-1</item>
+        <item>X TBS-2</item>
+        <item>X TBS-3</item>
+        <item>X PH-1</item>
+        <item>X PH-2</item>
+        <item>X PH-3</item>
+
+        <item>XI RPL-1</item>
+        <item>XI RPL-2</item>
+        <item>XI UPW</item>
+        <item>XI TBG-1</item>
+        <item>XI TBG-2</item>
+        <item>XI TBG-3</item>
+        <item>XI TBS-1</item>
+        <item>XI TBS-2</item>
+        <item>XI TBS-3</item>
+        <item>XI PH-1</item>
+        <item>XI PH-2</item>
+        <item>XI PH-3</item>
+
+        <item>XII RPL-1</item>
+        <item>XII RPL-2</item>
+        <item>XII UPW</item>
+        <item>XII TBG-1</item>
+        <item>XII TBG-2</item>
+        <item>XII TBG-3</item>
+        <item>XII TBS-1</item>
+        <item>XII TBS-2</item>
+        <item>XII TBS-3</item>
+        <item>XII PH-1</item>
+        <item>XII PH-2</item>
+        <item>XII PH-3</item>
+    </string-array>
+
+    <string-array name="sia_kehadiran">
+        <item>Pilih Keterangan</item>
+        <item>Sakit</item>
+        <item>Izin</item>
+        <item>Alpa</item>
+    </string-array>
+</resources>

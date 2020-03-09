@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".ListSudahInputKehadiranPage">
+
+    <LinearLayout
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="#fff"
+        android:outlineSpotShadowColor="#fff"
+        android:id="@+id/RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="List Kelas"
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_below="@id/RL"
+        android:id="@+id/RVSudahInputKehadiran"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/rlGaAdaData"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/bacaBuku"
+                android:src="@drawable/ic_bacabuku"
+                android:layout_height="300dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/bacaBuku"
+                android:text="Tidak Ada Data"
+                android:layout_marginTop="-60sp"
+                android:textSize="25sp"
+                android:id="@+id/jdlGaAda"
+                android:textColor="#464646"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/jdlGaAda"
+                android:text="Pastikan ketua kelas sudah menginputkan daftar siswa yang tidak masuk"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

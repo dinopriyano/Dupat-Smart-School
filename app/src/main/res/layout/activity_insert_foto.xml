@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/insertFotoPage"
+    android:background="#FFF"
+    tools:context=".InsertFoto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topBar"
+        app:cardElevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#fff"
+
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="Pilih Foto Profile"
+                android:textColor="#000"
+                android:textSize="24sp"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/convergence" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/topBar"
+        android:layout_width="match_parent"
+        app:cardElevation="1dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="match_parent"
+                app:riv_corner_radius_top_left="20dp"
+                app:riv_corner_radius_top_right="20dp"
+                android:id="@+id/img"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bgtas"
+                android:layout_height="220dp" />
+
+            <RelativeLayout
+                android:id="@+id/layfotoPP"
+                android:layout_marginTop="140dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="150dp"
+                android:layout_height="150dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="150dp"
+                    android:layout_centerInParent="true"
+                    app:civ_border_width="4dp"
+                    android:id="@+id/fotoProfile"
+                    android:src="@drawable/ic_student"
+                    app:civ_border_color="#ffff"
+                    android:layout_height="150dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:id="@+id/btnGantiPP"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="4dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/chabge_photo"
+                    android:layout_height="50dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Nama Siswa"
+                android:layout_marginTop="15dp"
+                android:textSize="24sp"
+                android:id="@+id/textNama"
+                android:textColor="#464646"
+                android:layout_below="@id/layfotoPP"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_below="@id/textNama"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/bgbutton"
+                android:text="Selesai"
+                android:id="@+id/btnUploadPP"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/convergence"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:elevation="10dp"
+        android:layout_width="match_parent"
+        android:background="#90000000"
+        android:id="@+id/bgLoadReg"
+        android:layout_height="match_parent">
+
+        <com.agrawalsuneet.dotsloader.loaders.LazyLoader
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progresBarReg"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            app:lazyloader_animDur="150"
+            app:lazyloader_dotsDist="10dp"
+            app:lazyloader_dotsRadius="16dp"
+            app:lazyloader_firstDelayDur="100"
+            app:lazyloader_firstDotColor="#E53935"
+            app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+            app:lazyloader_secondDelayDur="200"
+            app:lazyloader_secondDotColor="#FDE235"
+            app:lazyloader_thirdDotColor="#4CFF00" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/homePage"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context=".homePage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:id="@+id/topBar"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Dupat Smart School"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manjari_bold" />
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="30dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/menuBtn"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/ic_more_vert_black_24dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="30dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/topBar"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/rlProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:text="Profil Singkat"
+                        android:id="@+id/nananu"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/nanani"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:text="Lihat Profil"
+                        android:textColor="#FDE235"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hoahm"
+                    android:background="#fff"
+                    app:cardElevation="1dp"
+                    android:layout_below="@+id/rlProfile"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_kuning"
+                        android:adjustViewBounds="true"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <RelativeLayout
+                            android:layout_centerVertical="true"
+                            android:layout_width="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_height="wrap_content">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="80dp"
+                                android:id="@+id/fotoProfile"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_height="80dp"
+                                android:layout_marginLeft="10dp"
+                                app:civ_border_width="3dp"
+                                app:civ_border_color="#FDE235"
+                                android:src="@drawable/student" />
+
+                            <RelativeLayout
+                                android:layout_marginRight="10dp"
+                                android:layout_toRightOf="@+id/fotoProfile"
+                                android:layout_width="match_parent"
+                                android:id="@+id/tempL"
+                                android:padding="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="wrap_content">
+
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:text="Dino Priyano"
+                                        android:textSize="24sp"
+                                        android:maxLines="1"
+                                        android:ellipsize="end"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/manjari_bold"
+                                        android:id="@+id/profNama"
+                                        android:layout_height="wrap_content" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:text="Siswa"
+                                        android:layout_marginTop="-5dp"
+                                        android:textColor="#464646"
+                                        android:textSize="18sp"
+                                        android:fontFamily="@font/manjari_regular"
+                                        android:layout_below="@+id/profNama"
+                                        android:id="@+id/profPosisi"
+                                        android:layout_height="wrap_content" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:background="#fff"
+                        android:id="@+id/layShrimp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/Shrimp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_height="wrap_content">
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:layout_width="80dp"
+                                        android:id="@+id/layC"
+                                        android:src="#D8D6D6"
+                                        android:layout_centerVertical="true"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_height="80dp" />
+
+                                    <RelativeLayout
+                                        android:layout_toRightOf="@+id/layC"
+                                        android:layout_width="match_parent"
+                                        android:padding="15dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_height="wrap_content">
+
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_height="wrap_content">
+
+                                            <View
+                                                android:background="#D8D6D6"
+                                                android:layout_width="200dp"
+                                                android:textSize="24sp"
+                                                android:maxLines="1"
+                                                android:ellipsize="end"
+                                                android:textColor="#000000"
+                                                android:fontFamily="@font/convergence"
+                                                android:id="@+id/layD"
+                                                android:layout_height="25dp" />
+
+                                            <View
+                                                android:layout_width="60dp"
+                                                android:layout_marginTop="10dp"
+                                                android:text="Siswa"
+                                                android:background="#D8D6D6"
+                                                android:textColor="#464646"
+                                                android:textSize="18sp"
+                                                android:fontFamily="@font/convergence"
+                                                android:layout_below="@+id/layD"
+                                                android:layout_height="15dp" />
+
+                                        </RelativeLayout>
+
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_below="@+id/hoahm"
+                    android:layout_width="wrap_content"
+                    android:text="Informasi"
+                    android:textSize="14sp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/jdlInfo"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txtSelInfo"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:text="Selengkapnya"
+                    android:layout_below="@+id/hoahm"
+                    android:textColor="#FDE235"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/jdlInfo"
+                    android:id="@+id/layoutInfo"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="wrap_content"
+                        android:overScrollMode="never"
+                        android:id="@+id/rvInformasi"
+                        android:layout_height="wrap_content">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_below="@+id/layoutInfo"
+                    android:layout_width="wrap_content"
+                    android:text="Jam Pelajaran"
+                    android:textSize="14sp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/lolo"
+                    android:layout_height="wrap_content" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/jamMapel"
+                    app:cardElevation="1dp"
+                    android:layout_below="@+id/lolo"
+                    app:cardCornerRadius="15dp"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_margin="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/btnEditJamPel"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:text="Edit Jam"-->
+                        <!--android:textColor="#F0D602"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="70dp"
+                                android:layout_marginRight="10dp"
+                                android:id="@+id/calendar"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="70dp"
+                                android:src="@drawable/ic_clock" />
+
+                            <RelativeLayout
+                                android:layout_marginRight="10dp"
+                                android:layout_toLeftOf="@+id/calendar"
+                                android:layout_width="match_parent"
+                                android:id="@+id/tempM"
+                                android:layout_marginLeft="10dp"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:layout_height="wrap_content">
+
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:text="09:27"
+                                        android:textSize="24sp"
+                                        android:maxLines="1"
+                                        android:ellipsize="end"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/manjari_bold"
+                                        android:id="@+id/txtJam"
+                                        android:layout_height="wrap_content" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:text="-"
+                                        android:layout_marginTop="-5dp"
+                                        android:textColor="#464646"
+                                        android:textSize="18sp"
+                                        android:fontFamily="@font/manjari_regular"
+                                        android:layout_below="@+id/txtJam"
+                                        android:id="@+id/txtValue"
+                                        android:layout_height="wrap_content" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Laporan Harian"
+                    android:layout_below="@+id/jamMapel"
+                    android:layout_margin="10dp"
+                    android:textSize="14sp"
+                    android:id="@+id/huaha"
+                    android:layout_height="wrap_content" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="15dp"
+                    android:id="@+id/layHarian"
+                    android:layout_below="@+id/huaha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:id="@+id/buletan1"
+                                android:layout_width="90dp"
+                                android:gravity="center"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bulet_border"
+                                android:layout_height="90dp">
+
+                                <TextView
+                                    android:id="@+id/txtJumMur"
+                                    android:layout_gravity="center"
+                                    android:textStyle="bold"
+                                    android:padding="5dp"
+                                    android:textColor="#616161"
+                                    android:maxLines="1"
+                                    android:layout_width="wrap_content"
+                                    android:text="0"
+                                    android:autoSizeTextType="uniform"
+                                    android:textSize="20sp"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/txtMurid1"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="120dp"
+                                android:gravity="center"
+                                android:layout_marginTop="-22dp"
+                                android:layout_below="@+id/buletan1"
+                                android:padding="4dp"
+                                android:background="@drawable/lonjong_kuning"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="MURID"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:fontFamily="@font/convergence"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Terdaftar"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/txtMurid1"
+                                android:layout_centerHorizontal="true"
+                                android:layout_height="wrap_content" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/buletan2"
+                                android:layout_width="90dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bulet_border_ijo"
+                                android:layout_height="90dp">
+
+                                <TextView
+                                    android:id="@+id/txtJumTel"
+                                    android:autoSizeTextType="uniform"
+                                    android:layout_gravity="center"
+                                    android:textStyle="bold"
+                                    android:textColor="#616161"
+                                    android:padding="5dp"
+                                    android:maxLines="1"
+                                    android:layout_width="wrap_content"
+                                    android:text="0"
+                                    android:textSize="20sp"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/txtMurid2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="120dp"
+                                android:gravity="center"
+                                android:layout_marginTop="-22dp"
+                                android:layout_below="@+id/buletan2"
+                                android:padding="4dp"
+                                android:background="@drawable/lonjong_kuning"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="MURID"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:fontFamily="@font/convergence"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Terlambat"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/txtMurid2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_height="wrap_content" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/buletan3"
+                                android:layout_width="90dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/bulet_border_merah"
+                                android:layout_height="90dp">
+
+                                <TextView
+                                    android:id="@+id/txtJumAbsen"
+                                    android:layout_gravity="center"
+                                    android:textStyle="bold"
+                                    android:padding="5dp"
+                                    android:textColor="#616161"
+                                    android:maxLines="1"
+                                    android:layout_width="wrap_content"
+                                    android:text="0"
+                                    android:autoSizeTextType="uniform"
+                                    android:textSize="20sp"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/txtMurid3"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="120dp"
+                                android:gravity="center"
+                                android:layout_marginTop="-22dp"
+                                android:layout_below="@+id/buletan3"
+                                android:padding="4dp"
+                                android:background="@drawable/lonjong_kuning"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="MURID"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textColor="#FFFFFF"
+                                    android:fontFamily="@font/convergence"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Tidak Masuk"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/txtMurid3"
+                                android:layout_centerHorizontal="true"
+                                android:layout_height="wrap_content" />
+
+                        </RelativeLayout>
+
+                        <!--<LinearLayout-->
+                        <!--android:paddingBottom="20dp"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:gravity="center"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:layout_height="150dp">-->
+
+                        <!--<LinearLayout-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:id="@+id/lljmlMurid"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_height="180dp">-->
+                        <!--<androidx.appcompat.widget.AppCompatImageView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:src="@drawable/group"-->
+                        <!--android:layout_height="60dp" />-->
+                        <!--<androidx.appcompat.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:text="1227"-->
+                        <!--android:textSize="24sp"-->
+                        <!--android:id="@+id/txtJumMur"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:fontFamily="@font/convergence"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:fontFamily="@font/manjari_bold"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="Jumlah Murid \nTerdaftar" />-->
+
+
+                        <!--</LinearLayout>-->
+                        <!--<LinearLayout-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:layout_toRightOf="@+id/lljmlMurid"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_height="180dp">-->
+
+                        <!--<androidx.appcompat.widget.AppCompatImageView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:src="@drawable/timer"-->
+                        <!--android:layout_height="60dp" />-->
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:id="@+id/txtJumTel"-->
+                        <!--android:text="0"-->
+                        <!--android:textSize="24sp"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:fontFamily="@font/convergence"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="Jumlah Siswa\nTerlambat"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:fontFamily="@font/manjari_bold"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+
+                        <!--</LinearLayout>-->
+
+                        <!--</LinearLayout>-->
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:layout_below="@+id/layHarian"
+                    android:layout_width="wrap_content"
+                    android:text="Menu Utama"
+                    android:layout_margin="10dp"
+                    android:id="@+id/txtMenu"
+                    android:layout_height="wrap_content" />
+
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/txtMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/riwayatPage"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fitsSystemWindows="false">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivInformasi"
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/ic_inf" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/jdlInormasi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/ivInformasi"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Informasi"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp" />
+
+                                    <View
+                                        android:id="@+id/vwInformasi"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_below="@+id/jdlInormasi"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/vwInformasi"
+                                        android:gravity="center">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:text="Menulis dan Melihat Riwayat Informasi" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/jadwalPage"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:src="@drawable/ic_calendar" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Jadwal"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:text="Melihat Jadwal Pelajaran" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/tambahTugasPage"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="16dp"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="80dp"
+                                        android:src="@drawable/ic_paper_pen"
+                                        android:layout_height="80dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Tugas"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp"
+                                        android:layout_height="wrap_content" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color"
+                                        android:layout_height="1dp" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:gravity="center"
+                                            android:layout_width="wrap_content"
+                                            android:text="Daftar Tugas yang Diberikan Guru"
+                                            android:layout_height="wrap_content" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/cvDaftarTelat"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="16dp"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="80dp"
+                                        android:src="@drawable/ic_wristwatch"
+                                        android:layout_height="80dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Keterlambatan"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp"
+                                        android:layout_height="wrap_content" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color"
+                                        android:layout_height="1dp" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:gravity="center"
+                                            android:layout_width="wrap_content"
+                                            android:text="Melihat dan Menambahkan Daftar Siswa Terlambat Di Hari Ini"
+                                            android:layout_height="wrap_content" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/cvDaftarTidakMasuk"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="16dp"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="80dp"
+                                        android:src="@drawable/ic_tidak_masuk"
+                                        android:layout_height="80dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Kehadiran"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp"
+                                        android:layout_height="wrap_content" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color"
+                                        android:layout_height="1dp" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:gravity="center"
+                                            android:layout_width="wrap_content"
+                                            android:text="Menambahkan Daftar Siswa Tidak Hadir"
+                                            android:layout_height="wrap_content" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/cvDaftarCekKehadiran"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="16dp"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="80dp"
+                                        android:src="@drawable/ic_completed_task"
+                                        android:layout_height="80dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Kehadiran"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp"
+                                        android:layout_height="wrap_content" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color"
+                                        android:layout_height="1dp" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:gravity="center"
+                                            android:layout_width="wrap_content"
+                                            android:text="Melihat Daftar Siswa Tidak Hadir"
+                                            android:layout_height="wrap_content" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvAboutDev"
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="80dp"
+                                    android:src="@drawable/ic_question"
+                                    android:layout_height="80dp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:text="About Developer"
+                                    android:textColor="#030303"
+                                    android:textSize="18sp"
+                                    android:layout_height="wrap_content" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/cardview_shadow_start_color"
+                                    android:layout_height="1dp" />
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:gravity="center"
+                                        android:layout_width="wrap_content"
+                                        android:text="Mengetahui Tentang Pengembang"
+                                        android:layout_height="wrap_content" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:id="@+id/bgLoadLogHome"
+            android:layout_height="match_parent">
+
+            <com.agrawalsuneet.dotsloader.loaders.LazyLoader
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progresBarHome"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:layout_marginTop="30dp"
+                app:lazyloader_animDur="150"
+                app:lazyloader_dotsDist="10dp"
+                app:lazyloader_dotsRadius="16dp"
+                app:lazyloader_firstDelayDur="100"
+                app:lazyloader_firstDotColor="#E53935"
+                app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+                app:lazyloader_secondDelayDur="200"
+                app:lazyloader_secondDotColor="#FDE235"
+                app:lazyloader_thirdDotColor="#4CFF00" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

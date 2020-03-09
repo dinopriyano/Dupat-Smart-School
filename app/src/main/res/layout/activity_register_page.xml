@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:id="@+id/registerPage"
+    android:layout_height="match_parent"
+    tools:context=".registerPage">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Register"
+                    android:fontFamily="@font/manjari_bold"
+                    android:textSize="50sp"
+                    android:textColor="#636363"
+                    android:id="@+id/icLogin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_below="@+id/icLogin"
+                    android:layout_width="match_parent"
+                    app:hintEnabled="false"
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/ilNama"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtNama"
+                        android:inputType="textPersonName"
+                        android:hint="Nama"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="12dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/focusborder"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_below="@+id/ilNama"
+                    android:layout_width="match_parent"
+                    app:hintEnabled="false"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ilNis"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtNis"
+                        android:inputType="number"
+                        android:hint="NIS"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/focusborder"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="12dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_below="@+id/ilNis"
+
+                    android:id="@+id/spKelas"
+                    android:layout_height="wrap_content">
+
+                </androidx.appcompat.widget.AppCompatSpinner>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/il1"
+                    app:hintEnabled="false"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/spKelas"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtEmail"
+                        android:hint="Email"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/focusborder"
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_height="wrap_content" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_below="@+id/il1"
+                    android:layout_width="match_parent"
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false"
+                    android:id="@+id/il2"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/convergence"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtPass"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/focusborder"
+                        android:inputType="textPassword"
+                        android:hint="Password"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="12dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:id="@+id/btnDaftar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/il2"
+                    android:background="@drawable/bgbutton"
+                    android:text="Daftar"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_below="@+id/btnDaftar"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:textColor="#464646"
+                        android:layout_centerHorizontal="true"
+                        android:text="Sudah punya akun Dupat?"
+                        android:id="@+id/ketMasuk"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/ketMasuk"
+                        android:text=" Masuk"
+                        android:textColor="#FDE235"
+                        android:id="@+id/btnMas"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:background="#90000000"
+        android:id="@+id/bgLoadReg"
+        android:layout_height="match_parent">
+
+        <com.agrawalsuneet.dotsloader.loaders.LazyLoader
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progresBarReg"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:layout_marginTop="30dp"
+            app:lazyloader_animDur="150"
+            app:lazyloader_dotsDist="10dp"
+            app:lazyloader_dotsRadius="16dp"
+            app:lazyloader_firstDelayDur="100"
+            app:lazyloader_firstDotColor="#E53935"
+            app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+            app:lazyloader_secondDelayDur="200"
+            app:lazyloader_secondDotColor="#FDE235"
+            app:lazyloader_thirdDotColor="#4CFF00" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

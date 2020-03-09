@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMapel"
+    app:cardBackgroundColor="#00AA605A"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/cvClickMapel"
+        app:cardBackgroundColor="#FDE235"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:background="#FDE235"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="3dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/icLab"
+                android:layout_width="20dp"
+                android:src="@drawable/ic_label_black_24dp"
+                android:layout_height="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/icLab"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/txtMapel"
+                    android:textColor="#505050"
+                    android:layout_centerVertical="true"
+                    android:text="Matematika"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/txtWaktu"
+                    android:textColor="#6F6F6F"
+                    android:layout_centerVertical="true"
+                    android:text="6:30 - 8:30"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:layout_width="wrap_content"
+        app:fab_size="mini"
+        android:id="@+id/btnDelete"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:layout_gravity="center_vertical"
+        app:fab_colorNormal="#FDE235"
+        android:background="#FDE235"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

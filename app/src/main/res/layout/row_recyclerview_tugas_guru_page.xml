@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:background="#fff"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/llRowTugasGuru"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Hari, Tanggal"
+            android:id="@+id/tanggalTugas"
+            android:layout_height="wrap_content" />
+
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_below="@+id/tanggalTugas"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp"
+            app:cardUseCompatPadding="true"
+            android:background="#FDD835"
+            android:elevation="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Mata Pelajaran"
+                    android:textSize="18sp"
+                    android:id="@+id/mapelTugas"
+                    android:textColor="#464646"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="-5dp"
+                    android:layout_width="wrap_content"
+                    android:text="Kelas"
+                    android:textSize="12sp"
+                    android:id="@+id/kelasTugas"
+                    android:layout_below="@+id/mapelTugas"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/kelasTugas"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/descTugas"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:textSize="14sp"
+                    android:text="-"
+                    android:layout_height="wrap_content" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/lampiranTugas"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/descTugas"
+                    android:backgroundTint="#FDE235"
+                    android:layout_marginTop="10dp"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:background="@drawable/shapeoval"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_lampiran"
+                                android:adjustViewBounds="true"
+                                android:layout_height="15dp" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:textColor="#fff"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Terdapat lampiran"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</LinearLayout>

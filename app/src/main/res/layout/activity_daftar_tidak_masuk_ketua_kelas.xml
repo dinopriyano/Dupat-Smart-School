@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pageTambahGaMasuk"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".DaftarTidakMasukKetuaKelas">
+
+    <LinearLayout
+        android:id="@+id/RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Kehadiran Siswa"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/RL">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RVKehadiran"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/btnTambahGaMasuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="1dp"
+        app:menu_colorNormal="#FDE235"
+        app:menu_icon="@drawable/ic_add_black_24dp"
+        app:menu_openDirection="up">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/btnShowGaMasuk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_person_add_black_24dp"
+            app:fab_colorNormal="#53BEF8"
+            app:fab_label="Tambah Siswa Tidak Masuk" />
+
+        <!--<com.github.clans.fab.FloatingActionButton-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:src="@drawable/ic_live_help_black_24dp"-->
+        <!--app:fab_colorNormal="#25FF5D"-->
+        <!--android:id="@+id/btnShowTataCara"-->
+        <!--app:fab_label="Tata Cara"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <RelativeLayout
+        android:id="@+id/rvBgInsertGaMasuk"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#90000000"
+        android:elevation="1dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/isiInsertKehadiran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="50dp"
+            android:background="@drawable/bgprofile"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/convergence"
+                android:gravity="center"
+                android:text="Tambah Siswa Tidak Masuk"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/namaGaMasuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shapeoval"
+                android:hint="nama..."
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:padding="10dp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/nisGaMasuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shapeoval"
+                android:hint="nis..."
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="10dp" />
+
+            <Spinner
+                android:id="@+id/spKetGaMasuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/sia_kehadiran">
+
+            </Spinner>
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTutupPopup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bgbuttonmerah"
+                    android:text="Tutup"
+                    android:textColor="#ffff" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTambahSiswaGaMasuk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/bgbuttonijo"
+                    android:text="Tambah"
+                    android:textColor="#ffff" />
+
+
+            </GridLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="1dp">
+
+            <RelativeLayout
+                android:id="@+id/isiUpdateDeleteGaMasuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/bgprofile"
+                android:elevation="1dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/txtProfilGaMasuk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/convergence"
+                    android:text="Profil 03032003"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/namaKehadiranUD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtProfilGaMasuk"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shapeoval"
+                    android:hint="nama..."
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:padding="10dp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/nisKehadiranUD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/namaKehadiranUD"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shapeoval"
+                    android:hint="nis..."
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="10dp" />
+
+                <Spinner
+                    android:id="@+id/spKetUD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nisKehadiranUD"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/sia_kehadiran">
+
+                </Spinner>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/spKetUD"
+                    android:layout_marginTop="20dp"
+                    android:columnCount="2"
+                    android:rowCount="1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnDeleteUD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/bgbuttonmerah"
+                        android:text="Delete"
+                        android:textColor="#ffff" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnUpdateUD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/bgbuttonijo"
+                        android:text="Update"
+                        android:textColor="#ffff" />
+
+
+                </GridLayout>
+
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnCloseUD"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/shapeoval"
+                android:elevation="1dp"
+                android:src="@drawable/ic_close_black_24dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlGaAdaData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/bacaBuku"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_bacabuku" />
+
+            <TextView
+                android:id="@+id/jdlGaAda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bacaBuku"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-60sp"
+                android:text="Tidak Ada Data"
+                android:textColor="#464646"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jdlGaAda"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_horizontal"
+                android:text="Pastikan anda sudah menginputkan daftar siswa yang terlambat." />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile">
+
+    </item>
+
+    <item android:id="@+id/menu_contact" android:title="Contact">
+        <menu>
+            <item
+                android:id="@+id/email_contact"
+                android:title="Email">
+
+            </item>
+            <item
+                android:id="@+id/wa_contact"
+                android:title="Whatsapp">
+
+            </item>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Log Out"
+        >
+
+    </item>
+
+</menu>
