@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".actTambahBlog">
+
+    <LinearLayout
+        android:background="#ffff"
+        android:id="@+id/RL"
+        android:elevation="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="Tulis Blog"
+            android:id="@+id/tbTambahBlog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="#ffff"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_field_boxes"
+                android:layout_width="match_parent"
+                app:minCharacters="5"
+                app:maxCharacters="200"
+                app:panelBackgroundColor="#56CFCFCF"
+                app:primaryColor="#FDD835"
+                app:errorColor="#E53935"
+                android:layout_height="wrap_content"
+                app:labelText="Judul Blog"
+                >
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/extended_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:id="@+id/rvChangePhoto"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/ppBlog"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/no_image"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:layout_height="match_parent" />
+
+                <RelativeLayout
+                    android:id="@+id/rvTapTo"
+                    android:layout_width="match_parent"
+                    android:background="#B2E6E6E6"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:text="Tap untuk mengubah gambar"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
