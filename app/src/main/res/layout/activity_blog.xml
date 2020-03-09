@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F1F1F1"
+    android:layout_height="match_parent"
+    tools:context=".actBlog">
+
+    <LinearLayout
+        android:background="#ffff"
+        android:id="@+id/RL"
+        android:elevation="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="Blog"
+            android:id="@+id/tbBlog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NewApi"></androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:divider="#fff"
+        tools:listitem="@layout/row_recyclerview_blog"
+        android:layout_width="match_parent"
+        android:id="@+id/rvBlog"
+        android:layout_below="@+id/RL"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:elevation="1dp"
+        android:layout_width="wrap_content"
+        app:menu_colorNormal="#FDE235"
+        android:id="@+id/btnTambahBlog"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:menu_openDirection="up"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        app:menu_icon="@drawable/ic_add_black_24dp"
+        android:layout_height="wrap_content">
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>

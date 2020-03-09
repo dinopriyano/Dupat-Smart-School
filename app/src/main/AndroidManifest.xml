@@ -17,12 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailJadwalPage"
-            android:parentActivityName=".MainActivity">
-        </activity>
+        <activity android:name=".actBlog"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".DetailJadwalPage"
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".JadwalPage"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailTugasPage"
             android:parentActivityName=".MainActivity" />

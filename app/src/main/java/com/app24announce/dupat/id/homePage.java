@@ -112,7 +112,7 @@ public class homePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
     ArrayList<String> pengumuman = new ArrayList<>();
     ArrayList<String> keys = new ArrayList<>();
     RecyclerView rvInformasi;
-    CardView cvTulis,cvDaftarTelat,cvdaftarTidakMasuk,cvAboutDev,cvDaftarCekKehadiran,layoutHarian,tambahTugasPage,jadwalPage;
+    CardView cvTulis,cvDaftarTelat,cvdaftarTidakMasuk,cvAboutDev,cvDaftarCekKehadiran,layoutHarian,tambahTugasPage,jadwalPage,cvBlog;
     FirebaseAuth myAuth;
     TextView txtNama,txtPosisi,jumMur,jumTel, lihatProfile,txtLaporan;
     boolean rev;
@@ -311,13 +311,13 @@ public class homePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         long banyakChild = dataSnapshot.getChildrenCount();
 
-                        Log.d(TAG, "onDataChangeAnak: "+banyakChild);
+                        //Log.d(TAG, "onDataChangeAnak: "+banyakChild);
                         if(dataSnapshot.exists())
                         {
                             for(long i = 0;i < banyakChild-1;i++)
                             {
 
-                                Log.d(TAG, "Awal : "+(dataSnapshot                                                                                                                                                                                                                                                                                                                                                                                                                                                                   .child("acara").getValue())+" Akhir : "+(i+2));
+                                //Log.d(TAG, "Awal : "+(dataSnapshot.child("acara").getValue())+" Akhir : "+(i+2));
                                 try {
                                     jamTiga[0] = sdfDateTime.parse("15:00");
                                 } catch (ParseException e) {
@@ -445,6 +445,7 @@ public class homePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
         layoutHarian = (CardView) findViewById(R.id.layHarian);
         jadwalPage = (CardView) findViewById(R.id.jadwalPage);
         tambahTugasPage = (CardView) findViewById(R.id.tambahTugasPage);
+        cvBlog = (CardView) findViewById(R.id.cvBlog);
 
         lihatProfile = (TextView) findViewById(R.id.nanani);
 
@@ -744,6 +745,23 @@ public class homePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
 
                 mLastClickTime = SystemClock.elapsedRealtime();
                 startActivity(new Intent(homePage.this,ListSudahInputKehadiranPage.class));
+            }
+        });
+
+        cvBlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(SystemClock.elapsedRealtime() - mLastClickTime < 1000)
+                {
+                    return;
+                }
+
+                mLastClickTime = SystemClock.elapsedRealtime();
+                Intent intent = new Intent(homePage.this,actBlog.class);
+                intent.putExtra("posisiNya",posSis);
+                startActivity(intent);
+
             }
         });
 

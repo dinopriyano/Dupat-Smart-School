@@ -1099,6 +1099,70 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:id="@+id/cvBlog"
+                            app:cardElevation="1dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:layout_height="match_parent" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:orientation="vertical"
+                                    android:padding="16dp"
+                                    android:gravity="center"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="80dp"
+                                        android:src="@drawable/ic_web_design"
+                                        android:layout_height="80dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Blog"
+                                        android:textColor="#030303"
+                                        android:textSize="18sp"
+                                        android:layout_height="wrap_content" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:background="@color/cardview_shadow_start_color"
+                                        android:layout_height="1dp" />
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:gravity="center"
+                                            android:layout_width="wrap_content"
+                                            android:text="Melihat blog yang di tulis oleh guru"
+                                            android:layout_height="wrap_content" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/cvAboutDev"
                             android:layout_width="match_parent"
                             android:foreground="?android:attr/selectableItemBackground"
