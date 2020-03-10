@@ -22,9 +22,9 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ppUserBlog"
-                android:src="@drawable/group"
+                android:src="@drawable/ic_student"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
 

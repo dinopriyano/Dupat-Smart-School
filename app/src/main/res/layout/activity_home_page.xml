@@ -1102,6 +1102,7 @@
                             android:layout_width="match_parent"
                             android:foreground="?android:attr/selectableItemBackground"
                             android:clickable="true"
+                            android:visibility="gone"
                             android:id="@+id/cvBlog"
                             app:cardElevation="1dp"
                             app:cardCornerRadius="12dp"
